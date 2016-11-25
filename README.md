@@ -1,2 +1,2 @@
 # Swift
-Swift documentation and tips
+Swift documentation, tips and demo projects.
