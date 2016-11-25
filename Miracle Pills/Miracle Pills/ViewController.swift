@@ -44,8 +44,12 @@ class ViewController: UIViewController {
 
         statePicker.delegate = self
         statePicker.dataSource = self
-        
-        self.zipTextField.delegate = self
+
+        //Set all textFields delegates so we can use resignFirstResponder
+        for textField in self.view.subviews where textField is UITextField {
+            let textFieldItem = textField as! UITextField
+            textFieldItem.delegate = self
+        }
     }
 
     override func didReceiveMemoryWarning() {
