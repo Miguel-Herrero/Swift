@@ -139,7 +139,7 @@
                                     <action selector="buyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMt-kM-CcH"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="1fA-JX-2Yo">
+                            <imageView hidden="YES" userInteractionEnabled="NO" tag="20" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="1fA-JX-2Yo">
                                 <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="52w-J1-lVY"/>
@@ -205,23 +205,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="SvP-9x-JHl" id="TJF-z4-eFU"/>
-                        <outlet property="addressTextField" destination="ub7-jp-3XS" id="jcQ-Ox-4eS"/>
-                        <outlet property="buyButton" destination="U4R-Js-ZOx" id="FnJ-la-EL0"/>
-                        <outlet property="cityLabel" destination="92h-a5-zXh" id="rxx-Pp-2EK"/>
-                        <outlet property="cityTextField" destination="MAJ-GN-8rP" id="VhK-a8-Seh"/>
                         <outlet property="countryLabel" destination="JRO-nh-kce" id="Uqu-gw-YWD"/>
                         <outlet property="countryTextField" destination="YY6-an-GqS" id="0uK-zb-uTI"/>
-                        <outlet property="dividerView" destination="HgE-vw-VWG" id="fbK-if-1yD"/>
-                        <outlet property="nameLabel" destination="5Q0-is-lJ0" id="yBy-lE-aRd"/>
-                        <outlet property="nameTextField" destination="m9I-hE-QCv" id="iJw-uW-T1h"/>
-                        <outlet property="pillImage" destination="F2I-gm-NLt" id="h2k-x0-7z9"/>
-                        <outlet property="stateLabel" destination="5RY-vW-ylR" id="Mg5-xC-kdc"/>
                         <outlet property="statePicker" destination="YSh-qF-kyg" id="C6A-oc-kMm"/>
                         <outlet property="statePickerButton" destination="s56-dh-x3O" id="CuU-ng-dd4"/>
-                        <outlet property="subtitleLabel" destination="sZa-w2-Jvz" id="X30-A6-I8u"/>
                         <outlet property="successImage" destination="1fA-JX-2Yo" id="pJE-Ry-7fI"/>
-                        <outlet property="titleLabel" destination="wrf-4p-n6i" id="4j8-70-vVq"/>
                         <outlet property="zipLabel" destination="92h-px-L9Z" id="UzB-Id-mcb"/>
                         <outlet property="zipTextField" destination="Jru-sT-547" id="Hon-YP-KiT"/>
                     </connections>
