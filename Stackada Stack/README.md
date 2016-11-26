@@ -5,5 +5,8 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 Simple UI to learn Stackviews:
 
 - Horizontal and vertical Stackviews.
-- Variations of Stackview orientations for portrait and horizontal devices.
+- Variations of Stackview orientations for portrait and landscape devices.
 - Content hugging priority and Content compression resistance priority instead of constraints for buttons.
+
+![Portrait](Portrait.png)
+![Landscape](Landscape.png)
