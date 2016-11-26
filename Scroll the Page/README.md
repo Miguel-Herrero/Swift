@@ -7,3 +7,5 @@ UIScrollview and adding subviews programatically:
 - Creating UIImageviews programatically for the UIScrollview.
 - Sizes of views and scrollviews to let swipe between views.
 - Clip to bounds to false to see the next view in the scrollview.
+
+![Home screen](Home%20screen.jpeg)
