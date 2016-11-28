@@ -7,19 +7,39 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    var buttonSound: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Load sound and prepare an AV player for it
+        let path = Bundle.main.path(forResource: "btn", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: path!)
+        
+        do {
+            try buttonSound = AVAudioPlayer(contentsOf: soundURL)
+            buttonSound.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+    
+    @IBAction func numberPressed(sender: UIButton) {
+        playSound()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /** Play button sound if is not already playing */
+    func playSound() {
+        if buttonSound.isPlaying {
+            buttonSound.stop()
+        }
+        
+        buttonSound.play()
     }
-
 
 }
 
