@@ -5,3 +5,4 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 A retro-styled calculator:
 
 - Stack views and autolayout constraints.
+- Custom fonts.
