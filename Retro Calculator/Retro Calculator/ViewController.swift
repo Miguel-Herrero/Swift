@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         case Subtract = "-"
         case Add = "+"
         case Empty = "Empty"
+        case Clear = "Clear"
     }
     
     @IBOutlet weak var outputLabel: UILabel!
@@ -72,22 +73,37 @@ class ViewController: UIViewController {
     @IBAction func onEqualPressed(sender: AnyObject) {
         processOperation(operation: currentOperation)
     }
+    
+    @IBAction func onClearPressed(_ sender: Any) {
+        processOperation(operation: .Clear)
+    }
 
     /** Play button sound if is not already playing */
     func playSound() {
-        /*if buttonSound.isPlaying {
+        if buttonSound.isPlaying {
             buttonSound.stop()
         }
         
-        buttonSound.play()*/
+        buttonSound.play()
     }
     
     func processOperation(operation: Operation) {
         playSound()
-        
+
         // We have pressed something
         if currentOperation != Operation.Empty {
-            // We have pressed a number key
+            
+            // Clear button pressed. Reset everything
+            if operation == Operation.Clear {
+                result = ""
+                runningNumber = ""
+                rightValString = ""
+                leftValString = ""
+                outputLabel.text = ""
+                currentOperation = Operation.Empty
+                return
+            }
+            
             // A user selected an operator, but then selected another operator without first entering a number
             if runningNumber != "" {
                 rightValString = runningNumber
@@ -115,6 +131,5 @@ class ViewController: UIViewController {
             currentOperation = operation
         }
     }
-
 }
 
