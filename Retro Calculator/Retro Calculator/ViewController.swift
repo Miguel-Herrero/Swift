@@ -75,11 +75,11 @@ class ViewController: UIViewController {
 
     /** Play button sound if is not already playing */
     func playSound() {
-        if buttonSound.isPlaying {
+        /*if buttonSound.isPlaying {
             buttonSound.stop()
         }
         
-        buttonSound.play()
+        buttonSound.play()*/
     }
     
     func processOperation(operation: Operation) {
