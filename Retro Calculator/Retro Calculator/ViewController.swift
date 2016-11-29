@@ -47,34 +47,34 @@ class ViewController: UIViewController {
         outputLabel.text = ""
     }
     
-    @IBAction func numberPressed(sender: UIButton) {
+    @IBAction func numberPressed(_ sender: UIButton) {
         playSound()
         
         runningNumber += "\(sender.tag)"
         outputLabel.text = runningNumber
     }
     
-    @IBAction func onDividePressed(sender: AnyObject) {
+    @IBAction func onDividePressed(_ sender: UIButton) {
         processOperation(operation: .Divide)
     }
 
-    @IBAction func onMultiplyPressed(sender: AnyObject) {
+    @IBAction func onMultiplyPressed(_ sender: UIButton) {
         processOperation(operation: .Multiply)
     }
-
-    @IBAction func onSubtractPressed(sender: AnyObject) {
+    
+    @IBAction func onSubtractPressed(_ sender: UIButton) {
         processOperation(operation: .Subtract)
     }
-
-    @IBAction func onAddPressed(sender: AnyObject) {
+    
+    @IBAction func onAddPressed(_ sender: UIButton) {
         processOperation(operation: .Add)
     }
     
-    @IBAction func onEqualPressed(sender: AnyObject) {
+    @IBAction func onEqualPressed(_ sender: UIButton) {
         processOperation(operation: currentOperation)
     }
     
-    @IBAction func onClearPressed(_ sender: Any) {
+    @IBAction func onClearPressed(_ sender: UIButton) {
         processOperation(operation: .Clear)
     }
 

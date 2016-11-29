@@ -7,3 +7,4 @@ A retro-styled calculator:
 - Stack views and autolayout constraints.
 - Custom fonts.
 - Custom sounds when interacting with UI.
+- Calculator maths for operators and Clear buttons.
