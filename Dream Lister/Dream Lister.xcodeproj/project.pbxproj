@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49AF78D61DEF8C0C004EF8E8 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF78D51DEF8C0C004EF8E8 /* ItemDetailsVC.swift */; };
+		49AF78D81DEF8E80004EF8E8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF78D71DEF8E80004EF8E8 /* CustomTextField.swift */; };
 		49DB70081DEF229A00342032 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB70001DEF229A00342032 /* Item+CoreDataClass.swift */; };
 		49DB70091DEF229A00342032 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB70011DEF229A00342032 /* Item+CoreDataProperties.swift */; };
 		49DB700A1DEF229A00342032 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DB70021DEF229A00342032 /* Image+CoreDataClass.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49AF78D51DEF8C0C004EF8E8 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		49AF78D71DEF8E80004EF8E8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		49DB70001DEF229A00342032 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		49DB70011DEF229A00342032 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		49DB70021DEF229A00342032 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -58,10 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49AF78D41DEF8BF7004EF8E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49AF78D51DEF8C0C004EF8E8 /* ItemDetailsVC.swift */,
+				49DBDB491DEF1DD100CFAFC1 /* MainVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		49DB70111DEF2CAA00342032 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				49DB70121DEF2CC600342032 /* MaterialView.swift */,
+				49AF78D71DEF8E80004EF8E8 /* CustomTextField.swift */,
 				49DB70141DEF2EDC00342032 /* ItemCell.swift */,
 			);
 			name = View;
@@ -87,10 +101,10 @@
 		49DBDB461DEF1DD100CFAFC1 /* Dream Lister */ = {
 			isa = PBXGroup;
 			children = (
-				49DB70111DEF2CAA00342032 /* View */,
 				49DBDB6C1DEF21EA00CFAFC1 /* Model */,
+				49DB70111DEF2CAA00342032 /* View */,
+				49AF78D41DEF8BF7004EF8E8 /* Controller */,
 				49DBDB471DEF1DD100CFAFC1 /* AppDelegate.swift */,
-				49DBDB491DEF1DD100CFAFC1 /* MainVC.swift */,
 				49DBDB4B1DEF1DD100CFAFC1 /* Main.storyboard */,
 				49DBDB511DEF1DD100CFAFC1 /* Assets.xcassets */,
 				49DBDB531DEF1DD100CFAFC1 /* LaunchScreen.storyboard */,
@@ -204,11 +218,13 @@
 				49DB70081DEF229A00342032 /* Item+CoreDataClass.swift in Sources */,
 				49DB700A1DEF229A00342032 /* Image+CoreDataClass.swift in Sources */,
 				49DB700D1DEF229A00342032 /* Store+CoreDataProperties.swift in Sources */,
+				49AF78D61DEF8C0C004EF8E8 /* ItemDetailsVC.swift in Sources */,
 				49DBDB501DEF1DD100CFAFC1 /* Dream_Lister.xcdatamodeld in Sources */,
 				49DB700F1DEF229A00342032 /* ItemType+CoreDataProperties.swift in Sources */,
 				49DB700C1DEF229A00342032 /* Store+CoreDataClass.swift in Sources */,
 				49DB70091DEF229A00342032 /* Item+CoreDataProperties.swift in Sources */,
 				49DB700B1DEF229A00342032 /* Image+CoreDataProperties.swift in Sources */,
+				49AF78D81DEF8E80004EF8E8 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

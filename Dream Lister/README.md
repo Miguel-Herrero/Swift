@@ -7,3 +7,5 @@ A wish list app:
 - CoreData: entities, relationships, NSManagedObject, NSFetchRequests, NSFetchedResultsController
 - UI: Tableview, segments, IBInspectables for custom Views.
 - Table: insert, delete, update, move rows.
+- Navigation: replace NavigationController's Back button.
+- Picker view.
