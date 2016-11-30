@@ -14,7 +14,8 @@
 		49640E661DEEBFEB00C95445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49640E641DEEBFEB00C95445 /* LaunchScreen.storyboard */; };
 		49640E711DEED18500C95445 /* still time.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49640E701DEED18500C95445 /* still time.ttf */; };
 		49640E741DEED22900C95445 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49640E731DEED22900C95445 /* VideoVC.swift */; };
-		49640E761DEED2C200C95445 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49640E751DEED2C200C95445 /* README.md */; };
+		49640E781DEED38F00C95445 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49640E771DEED38F00C95445 /* PartyCell.swift */; };
+		49640E7A1DEED4A100C95445 /* PartyRock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49640E791DEED4A100C95445 /* PartyRock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,9 @@
 		49640E671DEEBFEB00C95445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49640E701DEED18500C95445 /* still time.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "still time.ttf"; sourceTree = "<group>"; };
 		49640E731DEED22900C95445 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
-		49640E751DEED2C200C95445 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49640E771DEED38F00C95445 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
+		49640E791DEED4A100C95445 /* PartyRock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyRock.swift; sourceTree = "<group>"; };
+		49EC2FF11DEED79D002416E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +47,7 @@
 		49640E4F1DEEBFEB00C95445 = {
 			isa = PBXGroup;
 			children = (
-				49640E751DEED2C200C95445 /* README.md */,
+				49EC2FF11DEED79D002416E3 /* README.md */,
 				49640E5A1DEEBFEB00C95445 /* Party Rock */,
 				49640E591DEEBFEB00C95445 /* Products */,
 			);
@@ -86,6 +89,7 @@
 		49640E6E1DEEC0FE00C95445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49640E791DEED4A100C95445 /* PartyRock.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -93,6 +97,7 @@
 		49640E6F1DEEC10300C95445 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49640E771DEED38F00C95445 /* PartyCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -180,8 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49640E741DEED22900C95445 /* VideoVC.swift in Sources */,
+				49640E7A1DEED4A100C95445 /* PartyRock.swift in Sources */,
+				49640E781DEED38F00C95445 /* PartyCell.swift in Sources */,
 				49640E5E1DEEBFEB00C95445 /* MainVC.swift in Sources */,
-				49640E761DEED2C200C95445 /* README.md in Sources */,
 				49640E5C1DEEBFEB00C95445 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +352,7 @@
 				49640E6C1DEEBFEB00C95445 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

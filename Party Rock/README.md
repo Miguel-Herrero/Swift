@@ -4,4 +4,5 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 
 App for visualizing YouTube videos:
 
-- Table views
+- Table views with Custom cells.
+- Models: private variables.
