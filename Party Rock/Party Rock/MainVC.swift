@@ -36,6 +36,14 @@ class MainVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoVC {
+            if let party = sender as? PartyRock {
+                destination.partyRock = party
+            }
+        }
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -56,5 +64,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let partyRock = partyRocks[indexPath.row]
+        
+        performSegue(withIdentifier: "VideoVC", sender: partyRock)
     }
 }

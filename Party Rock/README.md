@@ -5,6 +5,8 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 App for visualizing YouTube videos:
 
 - Table views with Custom cells.
-- Models: private variables.
+- Models: private variables, getters/setters.
 - Custom fonts.
-- HTTP requests: App Transport Security Settings.
+- Async HTTP requests: App Transport Security Settings, GCD (QOS, [weak self])
+- Segues between views.
+- Webviews.
