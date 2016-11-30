@@ -4,4 +4,5 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 
 A wish list app:
 
-- CoreData: entities, relationships.
+- CoreData: entities, relationships, NSManagedObject for automatic timestamps.
+- UI: Tableview, segments, IBInspectables for custom Views.
