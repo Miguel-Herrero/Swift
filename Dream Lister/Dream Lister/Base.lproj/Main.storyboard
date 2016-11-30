@@ -34,23 +34,23 @@
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uvn-y7-Y8b">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uvn-y7-Y8b">
                                 <rect key="frame" x="16" y="132" width="343" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="kW2-K2-06e" customClass="ItemCell" customModule="Dream_Lister" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="144"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="kW2-K2-06e" customClass="ItemCell" customModule="Dream_Lister" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kW2-K2-06e" id="sHE-xN-jeU">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-yV-ibb">
-                                                    <rect key="frame" x="8" y="8" width="327" height="127.5"/>
+                                                    <rect key="frame" x="8" y="8" width="327" height="133.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tesla" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-mD-j4J">
-                                                            <rect key="frame" x="8" y="18.5" width="90" height="90"/>
+                                                            <rect key="frame" x="8" y="21.5" width="90" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="4lW-qm-jSV"/>
                                                                 <constraint firstAttribute="height" constant="90" id="Ysl-sA-h92"/>
@@ -75,7 +75,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some day my dreams will come true and I will own this car. Just you wait." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-Cz-4tS">
-                                                            <rect key="frame" x="106" y="45" width="213" height="74"/>
+                                                            <rect key="frame" x="106" y="45" width="213" height="80"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -149,7 +149,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C5l-qJ-8Sl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cl3-GX-92g">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cl3-GX-92g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

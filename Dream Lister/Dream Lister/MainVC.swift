@@ -25,6 +25,9 @@ class MainVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        generateTestData()
+        attemptFetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,17 +41,40 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
 
+        if let sections = controller.sections {
+            return sections.count
+        }
+        
         return 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        if let sections = controller.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
+        
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        return UITableViewCell()
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        configureCell(cell: cell, indexPath: indexPath)
+
+        return cell
+    }
+    
+    func configureCell(cell: ItemCell, indexPath: IndexPath) {
+        
+        let item = controller.object(at: indexPath)
+        cell.configureCell(item: item)
     }
 
 }
@@ -68,7 +94,7 @@ extension MainVC: NSFetchedResultsControllerDelegate {
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         // Configure Fetched Results Controller
-        controller.delegate = self
+        self.controller = controller
         
         do {
             try controller.performFetch()
@@ -102,7 +128,7 @@ extension MainVC: NSFetchedResultsControllerDelegate {
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                // Update the cell data
+                configureCell(cell: cell, indexPath: indexPath)
             }
         case .move:
             if let indexPath = indexPath {
@@ -112,6 +138,27 @@ extension MainVC: NSFetchedResultsControllerDelegate {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
         }
+    }
+    
+    func generateTestData() {
+        
+        let item = Item(context: context)
+        item.title = "MacBook Pro"
+        item.price = 1800
+        item.details = "I can't wait until the September event, I hope they release new MBPs"
+        
+        let item2 = Item(context: context)
+        item2.title = "Bose Headphone"
+        item2.price = 300
+        item2.details = "But man, its so nice to be able to block aout everyone with the noise cancelling tech."
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Model S"
+        item3.price = 11000
+        item3.details = "Oh man this is a beautiful car. And one day I will own it"
+        
+        // If not saved, everything is in memory only
+        ad.saveContext()
     }
 
 }
