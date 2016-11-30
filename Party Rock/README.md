@@ -6,3 +6,5 @@ App for visualizing YouTube videos:
 
 - Table views with Custom cells.
 - Models: private variables.
+- Custom fonts.
+- HTTP requests: App Transport Security Settings.

@@ -21,6 +21,24 @@ class PartyCell: UITableViewCell {
     func updateUI(partyRock: PartyRock) {
         videoTitle.text = partyRock.videoTitle
         //TODO: Set image from URL
+        
+        let url = URL(string: partyRock.imageURL)!
+
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+
+                DispatchQueue.main.async {
+                    self.videoPreviewImage.image = UIImage(data: data)
+                }
+                /* Showed in the video; wrong UI update
+                 DispatchQueue.global().async {
+                    self.videoPreviewImage.image = UIImage(data: data)
+                }*/
+            } catch {
+                //Handle the error
+            }
+        }
     }
 
 }

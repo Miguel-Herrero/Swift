@@ -43,7 +43,13 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string></string>
 		<string>still time.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
