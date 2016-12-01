@@ -59,6 +59,31 @@ class ItemDetailsVC: UIViewController {
             //Handle the error
         }
     }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+        
+        let item = Item(context: context)
+        
+        if let title = self.titleField.text {
+            item.title = title
+        }
+        
+        if let price = self.priceField.text {
+            //item.price = Double(price)!
+            item.price = (price as NSString).doubleValue
+        }
+        
+        if let details = self.detailsField.text {
+            item.details = details
+        }
+        
+        item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        
+        ad.saveContext()
+        
+        // Dismiss view controller and take the user to the main view
+        _ = navigationController?.popViewController(animated: true)
+    }
 
 }
 

@@ -26,7 +26,7 @@ class MainVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        generateTestData()
+        //generateTestData()
         attemptFetch()
     }
 
@@ -94,6 +94,7 @@ extension MainVC: NSFetchedResultsControllerDelegate {
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         // Configure Fetched Results Controller
+        controller.delegate = self
         self.controller = controller
         
         do {
