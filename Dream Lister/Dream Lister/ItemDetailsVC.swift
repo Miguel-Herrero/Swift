@@ -18,6 +18,7 @@ class ItemDetailsVC: UIViewController {
     
     var stores = [Store]()
     var fetchedRequestsController: NSFetchedResultsController<Store>!
+    var itemToEdit: Item? //Only when editing, not when creating
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,10 @@ class ItemDetailsVC: UIViewController {
         //ad.saveContext()
         
         getStores()
+        
+        if itemToEdit != nil {
+            loadItemData()
+        }
     }
     
     func getStores() {
@@ -62,7 +67,14 @@ class ItemDetailsVC: UIViewController {
     
     @IBAction func savePressed(_ sender: UIButton) {
         
-        let item = Item(context: context)
+        var item:Item!
+            
+        if itemToEdit == nil {
+           item = Item(context: context)
+        } else {
+            item = itemToEdit
+        }
+        
         
         if let title = self.titleField.text {
             item.title = title
@@ -83,6 +95,31 @@ class ItemDetailsVC: UIViewController {
         
         // Dismiss view controller and take the user to the main view
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func loadItemData() {
+        
+        if let item = itemToEdit {
+            
+            titleField.text = item.title
+            priceField.text = "\(item.price)"
+            detailsField.text = item.details
+            
+            // Set the Store picker by comparing string titles of Stores
+            if let store = item.toStore {
+                
+                var index = 0
+                repeat {
+                    let s = stores[index]
+                    
+                    if s.name == store.name {
+                        storePicker.selectRow(index, inComponent: 0, animated: false)
+                        break
+                    }
+                    index += 1
+                } while (index < stores.count)
+            }
+        }
     }
 
 }

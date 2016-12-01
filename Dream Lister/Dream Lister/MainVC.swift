@@ -34,6 +34,17 @@ class MainVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Edit Item
+        if segue.identifier == "ItemDetailsVC" {
+            if let destination = segue.destination as? ItemDetailsVC {
+                let item = sender as? Item
+                destination.itemToEdit = item
+            }
+        }
+    }
 
 }
 
@@ -75,6 +86,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let objs = controller.fetchedObjects, objs.count > 0 {
+            let item = objs[indexPath.row]
+            performSegue(withIdentifier: "ItemDetailsVC", sender: item)
+        }
     }
 
 }
