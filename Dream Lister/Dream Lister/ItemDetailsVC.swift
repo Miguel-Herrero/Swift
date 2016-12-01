@@ -67,22 +67,14 @@ class ItemDetailsVC: UIViewController {
     
     @IBAction func savePressed(_ sender: UIButton) {
         
-        var item:Item!
-            
-        if itemToEdit == nil {
-           item = Item(context: context)
-        } else {
-            item = itemToEdit
-        }
-        
+        let item = itemToEdit ?? Item(context: context)
         
         if let title = self.titleField.text {
             item.title = title
         }
         
         if let price = self.priceField.text {
-            //item.price = Double(price)!
-            item.price = (price as NSString).doubleValue
+            item.price = Double(price)!
         }
         
         if let details = self.detailsField.text {
@@ -105,19 +97,9 @@ class ItemDetailsVC: UIViewController {
             priceField.text = "\(item.price)"
             detailsField.text = item.details
             
-            // Set the Store picker by comparing string titles of Stores
+            // Set the Store picker to the item's Store
             if let store = item.toStore {
-                
-                var index = 0
-                repeat {
-                    let s = stores[index]
-                    
-                    if s.name == store.name {
-                        storePicker.selectRow(index, inComponent: 0, animated: false)
-                        break
-                    }
-                    index += 1
-                } while (index < stores.count)
+                storePicker.selectRow(stores.index(of: store)!, inComponent: 0, animated: false)
             }
         }
     }
