@@ -15,10 +15,6 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
-    
-/*    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }*/
 
     override func viewDidLoad() {
         super.viewDidLoad()

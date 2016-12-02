@@ -173,6 +173,9 @@
                                     <constraint firstAttribute="width" constant="100" id="9Nj-La-5f4"/>
                                     <constraint firstAttribute="height" constant="100" id="E4a-0d-rTD"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="5ef-ZU-Umy" eventType="touchUpInside" id="Dgy-De-mpt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title…" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhF-ZH-DRl" customClass="CustomTextField" customModule="Dream_Lister" customModuleProvider="target">
                                 <rect key="frame" x="124" y="72" width="235" height="40"/>
@@ -260,12 +263,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="PCo-Cb-6Si">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="emE-YP-ZDJ">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="5ef-ZU-Umy" id="8zc-0y-1PX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="3Um-ih-XUl" id="Tpd-69-nyC"/>
                         <outlet property="priceField" destination="fiB-vk-1x5" id="gAY-WW-4mF"/>
                         <outlet property="storePicker" destination="soc-2I-sVS" id="t5p-ye-zCd"/>
+                        <outlet property="thumbImage" destination="yj1-qw-rhN" id="zYs-Rt-4sb"/>
                         <outlet property="titleField" destination="ZhF-ZH-DRl" id="LK8-nh-NVZ"/>
                     </connections>
                 </viewController>
