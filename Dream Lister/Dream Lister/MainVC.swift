@@ -11,10 +11,16 @@ import CoreData
 
 class MainVC: UIViewController {
     
+    // MARK: - Variables
+    
     var controller: NSFetchedResultsController<Item>!
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
+    
+    // MARK: - View cycle funcs
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,8 @@ class MainVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Edit Item
@@ -41,6 +49,8 @@ class MainVC: UIViewController {
             }
         }
     }
+    
+    // MARK: - IBActions
 
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         
@@ -48,6 +58,8 @@ class MainVC: UIViewController {
         tableView.reloadData()
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
@@ -98,6 +110,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+// MARK: - NSFetchedResultsControllerDelegate
+
 extension MainVC: NSFetchedResultsControllerDelegate {
     
     func attemptFetch() {
@@ -109,6 +123,7 @@ extension MainVC: NSFetchedResultsControllerDelegate {
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let priceSort = NSSortDescriptor(key: "price", ascending: true)
         let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        let typeSort = NSSortDescriptor(key: "toItemType", ascending: false)
 
         switch segment.selectedSegmentIndex {
         case 0:
@@ -117,6 +132,8 @@ extension MainVC: NSFetchedResultsControllerDelegate {
             fetchRequest.sortDescriptors = [priceSort]
         case 2:
             fetchRequest.sortDescriptors = [titleSort]
+        case 3:
+            fetchRequest.sortDescriptors = [typeSort]
         default:
             fetchRequest.sortDescriptors = [dateSort]
         }

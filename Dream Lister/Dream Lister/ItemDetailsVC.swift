@@ -11,6 +11,8 @@ import CoreData
 
 class ItemDetailsVC: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var itemTypePicker: UIPickerView!
     @IBOutlet weak var titleField: CustomTextField!
@@ -18,12 +20,16 @@ class ItemDetailsVC: UIViewController {
     @IBOutlet weak var detailsField: CustomTextField!
     @IBOutlet weak var thumbImage: UIImageView!
     
+    // MARK: - Variables
+    
     var stores = [Store]()
     var itemTypes = [ItemType]()
     var fetchedRequestsController: NSFetchedResultsController<Store>!
     var itemToEdit: Item? //Only when editing, not when creating
     var imagePicker: UIImagePickerController!
 
+    // MARK: - View funcs
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,31 +48,7 @@ class ItemDetailsVC: UIViewController {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-        /*let store1 = Store(context: context)
-        store1.name = "Best Buy"
-        let store2 = Store(context: context)
-        store2.name = "Tesla Dealership"
-        let store3 = Store(context: context)
-        store3.name = "Frys Electronics"
-        let store4 = Store(context: context)
-        store4.name = "Target"
-        let store5 = Store(context: context)
-        store5.name = "Amazon"
-        let store6 = Store(context: context)
-        store6.name = "K Mart"
-        ad.saveContext()*/
-        
-        /*let itemType1 = ItemType(context: context)
-        itemType1.type = "Electronics"
-        let itemType2 = ItemType(context: context)
-        itemType2.type = "Cars"
-        let itemType3 = ItemType(context: context)
-        itemType3.type = "Travel"
-        let itemType4 = ItemType(context: context)
-        itemType4.type = "House"
-        let itemType5 = ItemType(context: context)
-        itemType5.type = "Office"
-        ad.saveContext()*/
+        //generateTestData()
         
         getStores()
         getItemTypes()
@@ -76,29 +58,7 @@ class ItemDetailsVC: UIViewController {
         }
     }
     
-    func getStores() {
-        
-        let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
-        
-        do {
-            self.stores = try context.fetch(fetchRequest)
-            self.storePicker.reloadAllComponents()
-        } catch {
-            //Handle the error
-        }
-    }
-    
-    func getItemTypes() {
-        
-        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
-        
-        do {
-            self.itemTypes = try context.fetch(fetchRequest)
-            self.itemTypePicker.reloadAllComponents()
-        } catch {
-            // Handle the error
-        }
-    }
+    // MARK: - IBActions
     
     @IBAction func savePressed(_ sender: UIButton) {
         
@@ -147,6 +107,8 @@ class ItemDetailsVC: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    // MARK: - Other funcs
+    
     func loadItemData() {
         
         if let item = itemToEdit {
@@ -167,8 +129,63 @@ class ItemDetailsVC: UIViewController {
             }
         }
     }
+    
+    func getStores() {
+        
+        let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
+        
+        do {
+            self.stores = try context.fetch(fetchRequest)
+            self.storePicker.reloadAllComponents()
+        } catch {
+            //Handle the error
+        }
+    }
+    
+    func getItemTypes() {
+        
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        
+        do {
+            self.itemTypes = try context.fetch(fetchRequest)
+            self.itemTypePicker.reloadAllComponents()
+        } catch {
+            // Handle the error
+        }
+    }
+    
+    func generateTestData() {
+        let store1 = Store(context: context)
+        store1.name = "Best Buy"
+        let store2 = Store(context: context)
+        store2.name = "Tesla Dealership"
+        let store3 = Store(context: context)
+        store3.name = "Frys Electronics"
+        let store4 = Store(context: context)
+        store4.name = "Target"
+        let store5 = Store(context: context)
+        store5.name = "Amazon"
+        let store6 = Store(context: context)
+        store6.name = "K Mart"
+        ad.saveContext()
+        
+        let itemType1 = ItemType(context: context)
+        itemType1.type = "Electronics"
+        let itemType2 = ItemType(context: context)
+        itemType2.type = "Cars"
+        let itemType3 = ItemType(context: context)
+        itemType3.type = "Travel"
+        let itemType4 = ItemType(context: context)
+        itemType4.type = "House"
+        let itemType5 = ItemType(context: context)
+        itemType5.type = "Office"
+        ad.saveContext()
+    }
 
 }
+
+
+// MARK: - UIPickerViewDataSource, UIPickerViewDelegate
 
 extension ItemDetailsVC: UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -208,6 +225,8 @@ extension ItemDetailsVC: UIPickerViewDataSource, UIPickerViewDelegate {
         // Update when selected
     }
 }
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension ItemDetailsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
