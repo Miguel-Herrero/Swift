@@ -42,6 +42,11 @@ class MainVC: UIViewController {
         }
     }
 
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        
+        attemptFetch()
+        tableView.reloadData()
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -102,7 +107,19 @@ extension MainVC: NSFetchedResultsControllerDelegate {
         
         // Configure Fetch Request with Sort Descriptors
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+
+        switch segment.selectedSegmentIndex {
+        case 0:
+            fetchRequest.sortDescriptors = [dateSort]
+        case 1:
+            fetchRequest.sortDescriptors = [priceSort]
+        case 2:
+            fetchRequest.sortDescriptors = [titleSort]
+        default:
+            fetchRequest.sortDescriptors = [dateSort]
+        }
         
         // Create Fetched Results Controller
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)

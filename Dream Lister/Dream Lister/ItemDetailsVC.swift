@@ -37,7 +37,7 @@ class ItemDetailsVC: UIViewController {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-        let store1 = Store(context: context)
+        /*let store1 = Store(context: context)
         store1.name = "Best Buy"
         let store2 = Store(context: context)
         store2.name = "Tesla Dealership"
@@ -49,7 +49,7 @@ class ItemDetailsVC: UIViewController {
         store5.name = "Amazon"
         let store6 = Store(context: context)
         store6.name = "K Mart"
-        //ad.saveContext()
+        ad.saveContext()*/
         
         getStores()
         
