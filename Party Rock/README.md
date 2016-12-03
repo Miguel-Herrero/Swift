@@ -11,5 +11,5 @@ App for visualizing YouTube videos:
 - Segues between views.
 - Webviews.
 
-![Main screen](screen-shots/main.png)
-![Video detail screen](screen-shots/Video-Detail.png)
+![Main screen](screen-shots/Main.png)
+![Video detail screen](screen-shots/Video.png)
