@@ -7,3 +7,7 @@ Three non-sense UI to perform segues:
 - Perform segue via UI Button.
 - Perform segue programaatically with identifier.
 - Use private variable with getter/setter to receive segue's sender.
+
+![First screen](screen-shots/First-screen.png)
+![Second screen](screen-shots/Second-screen.png)
+![Third screen](screen-shots/Third-screen.png)
