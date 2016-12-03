@@ -8,4 +8,9 @@ A wish list app:
 - UI: Tableview, segments, IBInspectables for custom Views.
 - Table: insert, delete, update, move rows.
 - Navigation: replace NavigationController's Back button.
+- Segments for sorting fetched results by date, price, title or type.
 - Picker view for Images from Core Data.
+
+![Main screen](Screen-shots/Main.png)
+![New Item](Screen-shots/New-Item.png)
+![Edit Item](Screen-shots/Edit-Item.png)
