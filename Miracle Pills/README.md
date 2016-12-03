@@ -8,3 +8,7 @@ Simple UI for learning layouts and basic UI hidding:
 - Selecting UI views via Tags.
 - Autolayout constraints.
 - UIPicker for selecting data and updating a label/button (data source and delegate)
+
+![Main screen](screen-shots/Main.png)
+![Choose state](screen-shots/Choose-state.png)
+![Success screen](screen-shots/Buy-Success.png)
