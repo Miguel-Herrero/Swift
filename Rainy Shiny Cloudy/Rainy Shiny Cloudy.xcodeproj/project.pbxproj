@@ -75,12 +75,12 @@
 			children = (
 				495CFC001DFFEC6C00548E09 /* AppDelegate.swift */,
 				49ED297A1E00525500793816 /* Constants.swift */,
+				49ED297C1E00538300793816 /* CurrentWeather.swift */,
 				495CFC021DFFEC6C00548E09 /* WeatherVC.swift */,
 				495CFC041DFFEC6C00548E09 /* Main.storyboard */,
 				495CFC071DFFEC6C00548E09 /* Assets.xcassets */,
 				495CFC091DFFEC6C00548E09 /* LaunchScreen.storyboard */,
 				495CFC0C1DFFEC6C00548E09 /* Info.plist */,
-				49ED297C1E00538300793816 /* CurrentWeather.swift */,
 			);
 			path = "Rainy Shiny Cloudy";
 			sourceTree = "<group>";
