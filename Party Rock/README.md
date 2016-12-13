@@ -10,3 +10,6 @@ App for visualizing YouTube videos:
 - Async HTTP requests: App Transport Security Settings, GCD (QOS, [weak self])
 - Segues between views.
 - Webviews.
+
+![Main screen](screen-shots/Main.png)
+![Video detail screen](screen-shots/Video.png)

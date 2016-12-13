@@ -8,3 +8,5 @@ A retro-styled calculator:
 - Custom fonts.
 - Custom sounds when interacting with UI.
 - Calculator maths for operators and Clear buttons.
+
+![Main screen](Main.png)
