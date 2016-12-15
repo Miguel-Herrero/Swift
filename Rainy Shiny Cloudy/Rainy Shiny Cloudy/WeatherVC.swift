@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
 class WeatherVC: UIViewController {
     
@@ -21,6 +22,9 @@ class WeatherVC: UIViewController {
     var currentWeather: CurrentWeather!
     var forecast: Forecast!
     var forecasts = [Forecast]()
+
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +32,19 @@ class WeatherVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation() //Step-1 Requesting location updates
+        
         currentWeather = CurrentWeather()
-        currentWeather.downloadWeatherDetails { 
-            //Setup UI to load downloaded data
-            self.downloadForecastData {
-                self.updateMainUI()
-            }
-        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        locationAuthStatus()
     }
     
     func updateMainUI() {
@@ -90,6 +100,45 @@ extension WeatherVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             return WeatherCell()
+        }
+    }
+}
+
+extension WeatherVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationAuthStatus()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location
+            
+            if currentLocation != nil {
+                locationManager.stopUpdatingLocation()
+            }
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
+            print(Location.sharedInstance.latitude ?? "nada", Location.sharedInstance.longitude ?? "nada")
+            
+            currentWeather.downloadWeatherDetails {
+                //Setup UI to load downloaded data
+                self.downloadForecastData {
+                    self.updateMainUI()
+                }
+            }
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    /*
+     * If CLLocation is not authorized, we cannot show any weather info
+     */
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 }
