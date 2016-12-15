@@ -18,6 +18,7 @@
 		49ED297B1E00525500793816 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED297A1E00525500793816 /* Constants.swift */; };
 		49ED297D1E00538300793816 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED297C1E00538300793816 /* CurrentWeather.swift */; };
 		49F046FB1E029D1200C465FB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F046FA1E029D1200C465FB /* Location.swift */; };
+		49F046FD1E02A96800C465FB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49F046FC1E02A96800C465FB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		49ED297A1E00525500793816 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49ED297C1E00538300793816 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		49F046FA1E029D1200C465FB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		49F046FC1E02A96800C465FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8B65205CF4BF1A2858F9B799 /* Pods-Rainy Shiny Cloudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rainy Shiny Cloudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rainy Shiny Cloudy/Pods-Rainy Shiny Cloudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 		495CFBF41DFFEC6C00548E09 = {
 			isa = PBXGroup;
 			children = (
+				49F046FC1E02A96800C465FB /* README.md */,
 				495CFBFF1DFFEC6C00548E09 /* Rainy Shiny Cloudy */,
 				495CFBFE1DFFEC6C00548E09 /* Products */,
 				8271CAB74E9613E0D6BAB2E1 /* Pods */,
@@ -79,19 +82,43 @@
 		495CFBFF1DFFEC6C00548E09 /* Rainy Shiny Cloudy */ = {
 			isa = PBXGroup;
 			children = (
+				49F046FE1E02AA1B00C465FB /* Models */,
+				49F047001E02AA3F00C465FB /* Views */,
+				49F046FF1E02AA3300C465FB /* Controllers */,
 				495CFC001DFFEC6C00548E09 /* AppDelegate.swift */,
 				49ED297A1E00525500793816 /* Constants.swift */,
-				498221E61E01A3B700B64899 /* Forecast.swift */,
-				49ED297C1E00538300793816 /* CurrentWeather.swift */,
-				495CFC021DFFEC6C00548E09 /* WeatherVC.swift */,
 				495CFC041DFFEC6C00548E09 /* Main.storyboard */,
 				495CFC071DFFEC6C00548E09 /* Assets.xcassets */,
 				495CFC091DFFEC6C00548E09 /* LaunchScreen.storyboard */,
 				495CFC0C1DFFEC6C00548E09 /* Info.plist */,
-				498221E81E01AC4300B64899 /* WeatherCell.swift */,
-				49F046FA1E029D1200C465FB /* Location.swift */,
 			);
 			path = "Rainy Shiny Cloudy";
+			sourceTree = "<group>";
+		};
+		49F046FE1E02AA1B00C465FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				498221E61E01A3B700B64899 /* Forecast.swift */,
+				49F046FA1E029D1200C465FB /* Location.swift */,
+				49ED297C1E00538300793816 /* CurrentWeather.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		49F046FF1E02AA3300C465FB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				495CFC021DFFEC6C00548E09 /* WeatherVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		49F047001E02AA3F00C465FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				498221E81E01AC4300B64899 /* WeatherCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		8271CAB74E9613E0D6BAB2E1 /* Pods */ = {
@@ -233,6 +260,7 @@
 				49ED297D1E00538300793816 /* CurrentWeather.swift in Sources */,
 				49ED297B1E00525500793816 /* Constants.swift in Sources */,
 				498221E71E01A3B700B64899 /* Forecast.swift in Sources */,
+				49F046FD1E02A96800C465FB /* README.md in Sources */,
 				49F046FB1E029D1200C465FB /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
