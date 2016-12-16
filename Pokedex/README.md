@@ -6,5 +6,7 @@ A list of pokemons:
 
 - Collection views with custom cells.
 - Parse CSV.
+- Custom audio player.
+- Custom fonts.
 
 ![Main screen](Main.png)
