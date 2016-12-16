@@ -11,9 +11,33 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
+    
+    var pokemons = [Pokemon]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        parsePokemonCSV()
+    }
+    
+    func parsePokemonCSV() {
+        
+        let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
+        
+        do {
+            let csv = try CSV(contentsOfURL: path)
+            let rows = csv.rows
+            
+            for row in rows {
+                let pokeId = Int(row["id"]!)!
+                let name = row["identifier"]!
+
+                let pokemon = Pokemon(name: name, pokedexId: pokeId)
+                pokemons.append(pokemon)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
 }
@@ -24,9 +48,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
-            let pokemon = Pokemon(name: "Pokemon", pokedexId: indexPath.row)
+            let pokemon = pokemons[indexPath.row]
             
-            cell.configureCell(pokemon: pokemon)
+            cell.configureCell(pokemon)
 
             return cell
         } else {
@@ -41,7 +65,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return 30
+        return pokemons.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
