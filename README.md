@@ -13,3 +13,4 @@ Swift documentation, tips and demo projects.
 
 - [Retro Calculator](Retro Calculator): retro calculator with sounds and fonts.
 - [Dream Lister](Dream Lister): a wish list that uses Core Data.
+- [Rainy Shiny Cloudy](Rainy Shiny Cloudy): a weather app that uses Core Location and public API data.
