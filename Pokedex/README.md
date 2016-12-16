@@ -4,6 +4,7 @@ Based on Udemy's course [“iOS 10 & Swift 3: From Beginner to Paid Professional
 
 A list of pokemons:
 
+- Collection views.
 - Alamofire podfile.
 
 ![Main screen](Main.png)
