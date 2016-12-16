@@ -40,6 +40,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ial-1d-exI">
                                 <rect key="frame" x="20" y="129" width="335" height="518"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aMw-Js-UvT">
                                     <size key="itemSize" width="105" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -85,6 +86,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Tya-X6-P7q"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eDP-ty-RVI"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,6 +110,9 @@
                             <constraint firstItem="0GU-Nf-aJH" firstAttribute="top" secondItem="zHB-wW-igD" secondAttribute="bottom" id="uyB-x2-Qy6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="ial-1d-exI" id="Xhj-PS-Nyl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
