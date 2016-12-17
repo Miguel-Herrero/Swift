@@ -8,5 +8,6 @@ A list of pokemons:
 - Parse CSV.
 - Custom audio player.
 - Custom fonts.
+- SearchBar for filtering Pokemons.
 
 ![Main screen](Main.png)
