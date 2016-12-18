@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         parsePokemonCSV()
-        //initAudio()
+        initAudio()
         
         searchBar.returnKeyType = .done
     }
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
+            //musicPlayer.play()
         } catch {
             print(error.localizedDescription)
         }

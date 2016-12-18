@@ -28,8 +28,15 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = pokemon.name
-        pokemon.downloadPokemonDetails { 
+        nameLabel.text = pokemon.name.capitalized
+        
+        let image = UIImage(named: "\(pokemon.pokedexId)")
+        mainImage.image = image
+        currentEvoImage.image = image
+        
+        pokedexIDLabel.text = "\(pokemon.pokedexId)"
+
+        pokemon.downloadPokemonDetails {
 
             self.updateUI()
         }
@@ -47,5 +54,6 @@ class PokemonDetailVC: UIViewController {
         defenseLabel.text = pokemon.defense
         heightLabel.text = pokemon.height
         weightLabel.text = pokemon.weight
+        typeLabel.text = pokemon.type
     }
 }
