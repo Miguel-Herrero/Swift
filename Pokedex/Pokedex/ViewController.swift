@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         parsePokemonCSV()
-        initAudio()
+        //initAudio()
         
         searchBar.returnKeyType = .done
     }
