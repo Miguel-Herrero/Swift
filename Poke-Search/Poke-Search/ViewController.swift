@@ -99,12 +99,51 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var annotationView: MKAnnotationView?
+        let annotationIdentifier = "Pokemon"
 
         if annotation.isKind(of: MKUserLocation.self) {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
             annotationView?.image = UIImage(named: "ash")
+        } else if let dequedAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequedAnnotation
+            annotationView?.annotation = annotation
+        } else {
+            let annotation = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView = annotation
+        }
+        
+        if let annotationView = annotationView, let annotation = annotation as? PokeAnnotation {
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "\(annotation.pokemonNumber)")
+            
+            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            button.setImage(UIImage(named: "map"), for: .normal)
+            annotationView.rightCalloutAccessoryView = button
         }
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        
+        showSightingsOnMap(location: location)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation as? PokeAnnotation {
+            let place = MKPlacemark(coordinate: annotation.coordinate)
+            let destination = MKMapItem(placemark: place)
+            destination.name = "Pokemon Sighting"
+            let regionDistance: CLLocationDistance = 1000
+            let regionSpan = MKCoordinateRegionMakeWithDistance(annotation.coordinate, regionDistance, regionDistance)
+            
+            let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                           MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span),
+                           MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving] as [String : Any]
+            
+            MKMapItem.openMaps(with: [destination], launchOptions: options)
+        }
     }
 }
