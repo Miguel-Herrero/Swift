@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49838F5E1E0D2B94009BB818 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49838F5D1E0D2B94009BB818 /* PokeAnnotation.swift */; };
 		498612CC1E0D1A07009A7CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498612CB1E0D1A07009A7CB1 /* AppDelegate.swift */; };
 		498612CE1E0D1A07009A7CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498612CD1E0D1A07009A7CB1 /* ViewController.swift */; };
 		498612D11E0D1A07009A7CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498612CF1E0D1A07009A7CB1 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		49838F5A1E0D1E46009BB818 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49838F5D1E0D2B94009BB818 /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 		498612C81E0D1A07009A7CB1 /* Poke-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poke-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		498612CB1E0D1A07009A7CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		498612CD1E0D1A07009A7CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		49838F5B1E0D2B6B009BB818 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				498612CD1E0D1A07009A7CB1 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49838F5C1E0D2B6F009BB818 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49838F5D1E0D2B94009BB818 /* PokeAnnotation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		498612BF1E0D1A06009A7CB1 = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +92,9 @@
 		498612CA1E0D1A07009A7CB1 /* Poke-Search */ = {
 			isa = PBXGroup;
 			children = (
+				49838F5C1E0D2B6F009BB818 /* Model */,
+				49838F5B1E0D2B6B009BB818 /* Controller */,
 				498612CB1E0D1A07009A7CB1 /* AppDelegate.swift */,
-				498612CD1E0D1A07009A7CB1 /* ViewController.swift */,
 				498612CF1E0D1A07009A7CB1 /* Main.storyboard */,
 				498612D21E0D1A07009A7CB1 /* Assets.xcassets */,
 				498612D41E0D1A07009A7CB1 /* LaunchScreen.storyboard */,
@@ -219,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				498612CE1E0D1A07009A7CB1 /* ViewController.swift in Sources */,
+				49838F5E1E0D2B94009BB818 /* PokeAnnotation.swift in Sources */,
 				498612CC1E0D1A07009A7CB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
