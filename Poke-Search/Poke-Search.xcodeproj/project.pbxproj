@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49838F5A1E0D1E46009BB818 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		498612C81E0D1A07009A7CB1 /* Poke-Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poke-Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		498612CB1E0D1A07009A7CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		498612CD1E0D1A07009A7CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		498612BF1E0D1A06009A7CB1 = {
 			isa = PBXGroup;
 			children = (
+				49838F5A1E0D1E46009BB818 /* README.md */,
 				498612CA1E0D1A07009A7CB1 /* Poke-Search */,
 				498612C91E0D1A07009A7CB1 /* Products */,
 				159F19C98183A5C5A69975BD /* Pods */,
