@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        print("He pulsado el botón")
     }
     
 }
