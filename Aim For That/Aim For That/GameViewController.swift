@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        startNewRound()
+        resetGame()
         updateLabels()
     }
 
@@ -37,29 +37,51 @@ class GameViewController: UIViewController {
         let difference: Int = abs(self.currentValue - self.targetValue)
         
         // Puntos lineales
-        let points = (difference > 0) ? 100 - difference : 1000
+        //var points = (difference > 0) ? 100 - difference : 1000
+        var points = 100 - difference
+        let title: String
+        
+        switch difference {
+        case 0:
+            title = "Puntuación perfecta"
+            points = Int(10.0 * Float(points))
+        case 1...5:
+            title = "Casi perfecto"
+            points = Int(1.5 * Float(points))
+        case 6...12:
+            title = "Te ha faltado poco"
+            points = Int(1.2 * Float(points))
+        default:
+            title = "Has sido lejos…"
+        }
         
         self.score += points
-        
-        
-        let message = """
-            Has marcado \(points) puntos!
-"""
 
-        let alert = UIAlertController(title: "Hola mundo", message: message, preferredStyle: .alert)
+        let message = "Has marcado \(points) puntos!"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Genial", style: .default)
+        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.startNewRound()
+            self.updateLabels()
+        })
         alert.addAction(action)
-        
         present(alert, animated: true)
-
-        startNewRound()
-        updateLabels()
     }
     
     @IBAction func sliderMoved(_ sender: UISlider) {
         print("El valor del slider es \(sender.value)")
         self.currentValue = lroundf(sender.value)
+    }
+    
+    @IBAction func startNewGame() {
+        resetGame()
+        updateLabels()
+    }
+    
+    func resetGame() {
+        self.score = 0
+        self.round = 0
+        self.startNewRound()
     }
     
     func startNewRound() {
