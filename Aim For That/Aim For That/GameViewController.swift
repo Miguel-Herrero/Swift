@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupSlider()
         resetGame()
         updateLabels()
     }
@@ -30,6 +31,24 @@ class GameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupSlider() {
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
+        let trackLeftImage = UIImage(named: "SliderTrackLeft")
+        let trackRightImage = UIImage(named: "SliderTrackRight")
+        
+        self.slider.setThumbImage(thumbImageNormal, for: .normal)
+        self.slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftResizable = trackLeftImage?.resizableImage(withCapInsets: insets)
+        let trackRightResizable = trackRightImage?.resizableImage(withCapInsets: insets)
+        
+        self.slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        self.slider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
 
     @IBAction func showAlert() {
