@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import QuartzCore
 
 class GameViewController: UIViewController {
 
-    var currentValue: Int = 0
-    var targetValue:  Int = 0
-    var score:        Int = 0
-    var round:         Int = 0
+    var currentValue : Int = 0
+    var targetValue  : Int = 0
+    var score        : Int = 0
+    var round        : Int = 0
+    var time         : Int = 0
+    var timer        : Timer?
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var maxScore: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,11 +100,35 @@ class GameViewController: UIViewController {
     @IBAction func startNewGame() {
         resetGame()
         updateLabels()
+        
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        
+        self.view.layer.add(transition, forKey: nil)
     }
     
     func resetGame() {
+        var maxScore = UserDefaults.standard.integer(forKey: "maxScore")
+        
+        if maxScore < self.score {
+            maxScore = self.score
+            UserDefaults.standard.set(maxScore, forKey: "maxScore")
+        }
+
+        self.maxScore.text = "\(maxScore)"
         self.score = 0
         self.round = 0
+        self.time = 60
+        
+        if self.timer != nil {
+            self.timer?.invalidate()
+        }
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+        
+        self.updateLabels()
         self.startNewRound()
     }
     
@@ -114,6 +143,16 @@ class GameViewController: UIViewController {
         self.targetLabel.text = "\(self.targetValue)"
         self.scoreLabel.text = "\(self.score)"
         self.roundLabel.text = "\(self.round)"
+        self.timeLabel.text = "\(self.time)"
+    }
+    
+    @objc func tick() {
+        self.time -= 1
+        self.timeLabel.text = "\(self.time)"
+        
+        if self.time <= 0 {
+            self.resetGame()
+        }
     }
 }
 
