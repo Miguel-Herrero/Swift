@@ -21,6 +21,7 @@ class Scene: SKScene {
         }
     }
     let startTime = Date()
+    let deathSound = SKAction.playSoundFileNamed("QuickDeath", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -46,7 +47,7 @@ class Scene: SKScene {
         //1. Localizar el primer toque dle conjunto de toques y mirar si el toque cae dentro de nuestra vista de AR
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
-        print("Toque en \(location.x), \(location.y)")
+        // print("Toque en \(location.x), \(location.y)")
 
         //2. Buscar todos los nodos que han sido tocados por el usuario
         let hit = nodes(at: location)
@@ -56,19 +57,23 @@ class Scene: SKScene {
             let scaleOut = SKAction.scale(to: 2, duration: 0.4)
             let fadeOut = SKAction.fadeOut(withDuration: 0.4)
             let removeFromParent = SKAction.removeFromParent()
-            let groupAction = SKAction.group([scaleOut, fadeOut])
+            let groupAction = SKAction.group([scaleOut, fadeOut, deathSound])
             let sequenceAction = SKAction.sequence([groupAction, removeFromParent])
             
             sprite.run(sequenceAction)
             
             //4. Actualizar que hay un pokemon menos con la variable targetCount
             targetCount -= 1
+            
+            if targetsCreated == 1 && targetCount == 0 {
+                gameOver()
+            }
         }
     }
     
     func createTarget() {
         
-        if targetsCreated == 25 {
+        if targetsCreated == 1 {
             timer?.invalidate()
             timer = nil
             return
@@ -95,7 +100,7 @@ class Scene: SKScene {
         
         //5. Crear una traslación de 1,5 m en la dirección de la pantalla
         var translation = matrix_identity_float4x4
-        translation.columns.3.z = -1.5
+        translation.columns.3.z = -1.0
         
         //6. Combinar la rotación del paso 4 con la traslacion del paso 5
         let transform = simd_mul(rotation, translation)
@@ -105,5 +110,25 @@ class Scene: SKScene {
 
         //8. Añadir esa ancla a la escena
         sceneView.session.add(anchor: anchor)
+    }
+    
+    func gameOver() {
+        //1. Ocultar la remainign label
+        remainingLabel.removeFromParent()
+
+        //2. Crear una nueva imagen con el Game Over
+        let gameOver = SKSpriteNode(imageNamed: "gameover")
+        addChild(gameOver)
+
+        //3. Calcular cuánto tiempo le ha llevado a lusuario cazar todos los pokemon
+        let timeTaken = Date().timeIntervalSince(startTime)
+
+        //4. Mostrar ese tiempo que le ha llevado en pantalla en una etiqueta nueva
+        let timeTakenLabel = SKLabelNode(text: "Te ha llevado \(Int(timeTaken)) segundos")
+        timeTakenLabel.fontSize = 40
+        timeTakenLabel.color = .white
+        timeTakenLabel.position = CGPoint(x: view!.frame.maxX + 50, y: -view!.frame.midY + 50)
+        
+        addChild(timeTakenLabel)
     }
 }

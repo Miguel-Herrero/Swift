@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495A11721F2C97A800703FA3 /* QuickDeath.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 495A11711F2C97A800703FA3 /* QuickDeath.mp3 */; };
 		49CFC36B1F2B5472009A98BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFC36A1F2B5472009A98BB /* AppDelegate.swift */; };
 		49CFC36D1F2B5472009A98BB /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49CFC36C1F2B5472009A98BB /* Scene.sks */; };
 		49CFC36F1F2B5472009A98BB /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CFC36E1F2B5472009A98BB /* Scene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		495A11711F2C97A800703FA3 /* QuickDeath.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = QuickDeath.mp3; path = ../../../../../../Downloads/QuickDeath.mp3; sourceTree = "<group>"; };
 		49CFC3671F2B5472009A98BB /* PokemonAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CFC36A1F2B5472009A98BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49CFC36C1F2B5472009A98BB /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		49CFC3691F2B5472009A98BB /* PokemonAR */ = {
 			isa = PBXGroup;
 			children = (
+				495A11711F2C97A800703FA3 /* QuickDeath.mp3 */,
 				49CFC36A1F2B5472009A98BB /* AppDelegate.swift */,
 				49CFC36C1F2B5472009A98BB /* Scene.sks */,
 				49CFC36E1F2B5472009A98BB /* Scene.swift */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495A11721F2C97A800703FA3 /* QuickDeath.mp3 in Resources */,
 				49CFC36D1F2B5472009A98BB /* Scene.sks in Resources */,
 				49CFC3791F2B5472009A98BB /* LaunchScreen.storyboard in Resources */,
 				49CFC3761F2B5472009A98BB /* Assets.xcassets in Resources */,
@@ -324,6 +328,7 @@
 				49CFC37F1F2B5472009A98BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

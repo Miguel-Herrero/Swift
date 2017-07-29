@@ -57,7 +57,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         let random = GKRandomSource.sharedRandom()
-        let pokemonId = random.nextInt(upperBound: 4) + 1
+        let pokemonId = random.nextInt(upperBound: 5) + 1
         
         return SKSpriteNode(imageNamed: "pokemon\(pokemonId)")
     }
