@@ -9,13 +9,22 @@
 import UIKit
 import SpriteKit
 import ARKit
+import CoreLocation
+import GameplayKit
 
 class ViewController: UIViewController, ARSKViewDelegate {
     
     @IBOutlet var sceneView: ARSKView!
+    let locationManager = CLLocationManager()
+    var userLocation = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Assign delegate and obtain location
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -71,5 +80,38 @@ class ViewController: UIViewController, ARSKViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    // MARK: - My funcs
+    func updateSites() {
+        
+    }
+}
+
+// MARK: - CLLocationManager
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Obtener la última posición del usuario
+        guard let location = locations.last else {
+            return
+        }
+        
+        // Actualizar la posición del usuario
+        userLocation = location
+        
+        // Actualizar los sitios en segundo plano
+        DispatchQueue.global().async {
+            self.updateSites()
+        }
     }
 }
