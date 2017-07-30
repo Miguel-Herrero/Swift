@@ -23,6 +23,11 @@ class Scene: SKScene {
     let startTime = Date()
     let deathSound = SKAction.playSoundFileNamed("QuickDeath", waitForCompletion: false)
     
+    var score = 0.0
+    var bonus = 1.0
+    var secondsFromLastHit = 0
+    var lastHitTimer: Timer?
+    
     override func didMove(to view: SKView) {
         
         // Configuración del HeadUp Display (HUD)
@@ -44,7 +49,7 @@ class Scene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //1. Localizar el primer toque dle conjunto de toques y mirar si el toque cae dentro de nuestra vista de AR
+        //1. Localizar el primer toque del conjunto de toques y mirar si el toque cae dentro de nuestra vista de AR
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         // print("Toque en \(location.x), \(location.y)")
@@ -65,7 +70,29 @@ class Scene: SKScene {
             //4. Actualizar que hay un pokemon menos con la variable targetCount
             targetCount -= 1
             
-            if targetsCreated == 1 && targetCount == 0 {
+            //5. Actualizar la puntuación del jugador
+            if self.secondsFromLastHit <= 5 {
+                // Han pasado menos de 5 segundos desde que eliminó al último pokemon
+                bonus = 1.5
+                score += (10 * bonus)
+                
+                // Reseteamos el contador de última eliminación
+                lastHitTimer?.invalidate()
+                secondsFromLastHit = 0
+                lastHitTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                    self.secondsFromLastHit += 1
+                })
+            } else {
+                // Han pasado más de 5 s desde que eliminó el último pokemon
+                bonus = 1.0
+                score += (10 * bonus)
+                
+                // Reseteamos el contador de la última eliminación
+                lastHitTimer?.invalidate()
+                secondsFromLastHit = 0
+            }
+
+            if targetsCreated == 10 && targetCount == 0 {
                 gameOver()
             }
         }
@@ -73,7 +100,7 @@ class Scene: SKScene {
     
     func createTarget() {
         
-        if targetsCreated == 1 {
+        if targetsCreated == 10 {
             timer?.invalidate()
             timer = nil
             return
@@ -100,7 +127,8 @@ class Scene: SKScene {
         
         //5. Crear una traslación de 1,5 m en la dirección de la pantalla
         var translation = matrix_identity_float4x4
-        translation.columns.3.z = -1.0
+        let translationDistance = random.nextUniform() * 1.5 + 1
+        translation.columns.3.z = -translationDistance
         
         //6. Combinar la rotación del paso 4 con la traslacion del paso 5
         let transform = simd_mul(rotation, translation)
@@ -110,6 +138,12 @@ class Scene: SKScene {
 
         //8. Añadir esa ancla a la escena
         sceneView.session.add(anchor: anchor)
+        
+        //9. Eliminar el ancla (pokemon) de la pantalla tras 12 segundos
+        /*_ = Timer.scheduledTimer(withTimeInterval: 12, repeats: false) { (timer) in
+            sceneView.session.remove(anchor: anchor)
+            self.targetCount -= 1
+        }*/
     }
     
     func gameOver() {
@@ -117,7 +151,8 @@ class Scene: SKScene {
         remainingLabel.removeFromParent()
 
         //2. Crear una nueva imagen con el Game Over
-        let gameOver = SKSpriteNode(imageNamed: "gameover")
+        let gameOver = SKSpriteNode(imageNamed: "gameOver")
+        gameOver.position = CGPoint(x: 0, y: -30)
         addChild(gameOver)
 
         //3. Calcular cuánto tiempo le ha llevado a lusuario cazar todos los pokemon
@@ -126,9 +161,12 @@ class Scene: SKScene {
         //4. Mostrar ese tiempo que le ha llevado en pantalla en una etiqueta nueva
         let timeTakenLabel = SKLabelNode(text: "Te ha llevado \(Int(timeTaken)) segundos")
         timeTakenLabel.fontSize = 40
+        timeTakenLabel.fontName = "Avenir Next"
         timeTakenLabel.color = .white
-        timeTakenLabel.position = CGPoint(x: view!.frame.maxX + 50, y: -view!.frame.midY + 50)
+        timeTakenLabel.position = CGPoint(x: 0, y: view!.frame.midY - 100)
         
         addChild(timeTakenLabel)
+        
+        print("Score: \(score)")
     }
 }
