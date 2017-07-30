@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-MK-gTY">
+                                <rect key="frame" x="87.5" y="20" width="200" height="247.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="5Ib-oF-RWO"/>
+                                    <constraint firstAttribute="width" secondItem="M4r-MK-gTY" secondAttribute="height" multiplier="223:276" id="EIs-5X-ifL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-0f-EvZ">
+                                <rect key="frame" x="20" y="337" width="335" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="RES-Tg-J5q"/>
+                                </constraints>
+                                <string key="text">Esta app es una prueba del CoreML de Apple con Swift 4. No os toméis en serio el precio de venta del coche pues es una mera simulación.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEJ-5G-0fp">
+                                <rect key="frame" x="16" y="587" width="343" height="47"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                <state key="normal" title="Empezar la venta"/>
+                                <connections>
+                                    <segue destination="jM1-Bm-7Nz" kind="show" identifier="showSellCar" id="SXY-jk-tmy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="M4r-MK-gTY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1AQ-CI-UBS"/>
+                            <constraint firstItem="3ho-0f-EvZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="M4r-MK-gTY" secondAttribute="bottom" constant="69" id="381-2d-l8y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SEJ-5G-0fp" secondAttribute="bottom" constant="33" id="68d-0T-lYu"/>
+                            <constraint firstItem="SEJ-5G-0fp" firstAttribute="top" relation="lessThanOrEqual" secondItem="3ho-0f-EvZ" secondAttribute="bottom" constant="88" id="Epb-je-Pxu"/>
+                            <constraint firstItem="3ho-0f-EvZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H1w-yZ-Jeq"/>
+                            <constraint firstItem="SEJ-5G-0fp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IMe-B3-0SL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SEJ-5G-0fp" secondAttribute="trailing" constant="16" id="N2Q-Z8-tCH"/>
+                            <constraint firstAttribute="trailing" secondItem="3ho-0f-EvZ" secondAttribute="trailing" constant="20" id="TAg-4A-607"/>
+                            <constraint firstItem="M4r-MK-gTY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V88-nf-BHM"/>
+                            <constraint firstItem="3ho-0f-EvZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="w71-rS-G0L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.25" y="122.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zp3-Z5-rOd">
+            <objects>
+                <viewController id="jM1-Bm-7Nz" customClass="ViewController" customModule="CarML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Uns-cy-YTJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="n4Z-zd-8d2">
+                                <rect key="frame" x="12" y="36" width="351" height="371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modelo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="den-tz-m6N">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pz7-vu-PIK">
+                                        <rect key="frame" x="0.0" y="34" width="351" height="29"/>
+                                        <segments>
+                                            <segment title="207"/>
+                                            <segment title="307"/>
+                                            <segment title="407"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="calculateValue" destination="jM1-Bm-7Nz" eventType="valueChanged" id="sz2-EZ-gix"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq1-Qs-4IO">
+                                        <rect key="frame" x="0.0" y="70" width="351" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jt2-al-bTU">
+                                        <rect key="frame" x="0.0" y="104" width="353" height="31"/>
+                                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="calculateValue" destination="jM1-Bm-7Nz" eventType="valueChanged" id="L8n-pn-bUP"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometraje" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e62-bz-7Bp">
+                                        <rect key="frame" x="0.0" y="143" width="351" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="0.0" maxValue="200000" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-VB-6De">
+                                        <rect key="frame" x="-2" y="177" width="355" height="31"/>
+                                        <connections>
+                                            <action selector="calculateValue" destination="jM1-Bm-7Nz" eventType="valueChanged" id="3OT-cK-0KD"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-t5-3IB">
+                                        <rect key="frame" x="0.0" y="215" width="351" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-h3-DJT">
+                                        <rect key="frame" x="0.0" y="249" width="351" height="29"/>
+                                        <segments>
+                                            <segment title="Malo"/>
+                                            <segment title="Bueno"/>
+                                            <segment title="Muy bueno"/>
+                                            <segment title="Perfecto"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="calculateValue" destination="jM1-Bm-7Nz" eventType="valueChanged" id="JWi-QU-kHh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio de venta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nni-3U-p0l">
+                                        <rect key="frame" x="0.0" y="285" width="351" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnB-Jj-t66">
+                                        <rect key="frame" x="0.0" y="319" width="351" height="52"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n4Z-zd-8d2" firstAttribute="top" secondItem="Uns-cy-YTJ" secondAttribute="topMargin" constant="16" id="6Gq-Qy-XdD"/>
+                            <constraint firstItem="n4Z-zd-8d2" firstAttribute="leading" secondItem="Uns-cy-YTJ" secondAttribute="leadingMargin" constant="-4" id="PqI-lA-fat"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n4Z-zd-8d2" secondAttribute="trailing" constant="-4" id="Y0x-CP-XAl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UmF-39-2uc"/>
+                    </view>
+                    <connections>
+                        <outlet property="extrasSwitch" destination="jt2-al-bTU" id="8nj-n5-JFT"/>
+                        <outlet property="kmLabel" destination="e62-bz-7Bp" id="60z-Yf-cKe"/>
+                        <outlet property="kmSlider" destination="pPX-VB-6De" id="MQe-xf-Jv8"/>
+                        <outlet property="modelSegmentedControl" destination="pz7-vu-PIK" id="ShW-vH-tV9"/>
+                        <outlet property="priceLabel" destination="OnB-Jj-t66" id="63e-z5-38n"/>
+                        <outlet property="stackView" destination="n4Z-zd-8d2" id="ZAA-ud-m4G"/>
+                        <outlet property="statusSegmentedControl" destination="jxB-h3-DJT" id="P0U-eg-XvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydm-jd-JWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="348" height="433"/>
+        <namedColor name="MainColor">
+            <color red="0.79356759786605835" green="0.97576934099197388" blue="0.8238832950592041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
