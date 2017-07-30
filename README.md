@@ -17,3 +17,4 @@ Swift documentation, tips and demo projects.
 - [Rainy Shiny Cloudy](Rainy%20Shiny%20Cloudy): a weather app that uses Core Location and public API data.
 - [Car Machine Learning](CarML): **ML (Machine Learning) app** for calculating the price of a car based on params.
 - [Pokemon AR](PokemonAR): **AR (Augmented Reality)** game for catching all pokemons surrounding the user.
+- [What's Up](WhatsUp): **AR (Augmented Reality)** app for presenting on-screen places of interest from current user's location.
