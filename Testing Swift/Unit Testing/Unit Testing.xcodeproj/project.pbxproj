@@ -18,6 +18,10 @@
 		E3BDEB6422B055FA00B36AB5 /* LifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6322B055FA00B36AB5 /* LifecycleTests.swift */; };
 		E3BDEB6622B0563900B36AB5 /* VerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6522B0563900B36AB5 /* VerificationMethodTests.swift */; };
 		E3BDEB6822B0575A00B36AB5 /* ThrowingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6722B0575A00B36AB5 /* ThrowingTests.swift */; };
+		E3BDEB6B22B05E7500B36AB5 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6A22B05E7500B36AB5 /* SimpleViewController.swift */; };
+		E3BDEB6F22B05EF500B36AB5 /* SimpleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */; };
+		E3BDEB7322B0600500B36AB5 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
+		E3E28AD422B1A14600E839D4 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 		E3BDEB6522B0563900B36AB5 /* VerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodTests.swift; sourceTree = "<group>"; };
 		E3BDEB6722B0575A00B36AB5 /* ThrowingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowingTests.swift; sourceTree = "<group>"; };
 		E3BDEB6922B05B1100B36AB5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E3BDEB6A22B05E7500B36AB5 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
+		E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewControllerTests.swift; sourceTree = "<group>"; };
+		E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,8 @@
 				E36454D822B054E000A956CA /* LaunchScreen.storyboard */,
 				E36454D522B054E000A956CA /* Preview Content */,
 				E36454CF22B054DD00A956CA /* SceneDelegate.swift */,
+				E3BDEB6A22B05E7500B36AB5 /* SimpleViewController.swift */,
+				E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */,
 			);
 			path = "Unit Testing";
 			sourceTree = "<group>";
@@ -117,6 +126,7 @@
 				E3BDEB6322B055FA00B36AB5 /* LifecycleTests.swift */,
 				E3BDEB6522B0563900B36AB5 /* VerificationMethodTests.swift */,
 				E3BDEB6722B0575A00B36AB5 /* ThrowingTests.swift */,
+				E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */,
 			);
 			path = "Unit TestingTests";
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36454DA22B054E000A956CA /* LaunchScreen.storyboard in Resources */,
+				E3BDEB7322B0600500B36AB5 /* SimpleStoryboard.storyboard in Resources */,
 				E36454D722B054E000A956CA /* Preview Assets.xcassets in Resources */,
 				E36454D422B054E000A956CA /* Assets.xcassets in Resources */,
 			);
@@ -212,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E28AD422B1A14600E839D4 /* SimpleStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BDEB6B22B05E7500B36AB5 /* SimpleViewController.swift in Sources */,
 				E36454CE22B054DD00A956CA /* AppDelegate.swift in Sources */,
 				E36454D022B054DD00A956CA /* SceneDelegate.swift in Sources */,
 				E3BDEB6022B0558100B36AB5 /* Converter.swift in Sources */,
@@ -235,6 +248,7 @@
 			files = (
 				E3BDEB6222B0559D00B36AB5 /* ConverterTests.swift in Sources */,
 				E3BDEB6422B055FA00B36AB5 /* LifecycleTests.swift in Sources */,
+				E3BDEB6F22B05EF500B36AB5 /* SimpleViewControllerTests.swift in Sources */,
 				E3BDEB6622B0563900B36AB5 /* VerificationMethodTests.swift in Sources */,
 				E3BDEB6822B0575A00B36AB5 /* ThrowingTests.swift in Sources */,
 			);
