@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E33DF6B922B15B21009AA01C /* AsynchronousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF6B822B15B21009AA01C /* AsynchronousTests.swift */; };
 		E33DF6C122B15BE8009AA01C /* PrimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF6C022B15BE8009AA01C /* PrimeCalculator.swift */; };
 		E33DF6C322B15D2E009AA01C /* PrimeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF6C222B15D2E009AA01C /* PrimeCalculatorTests.swift */; };
 		E36454CE22B054DD00A956CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36454CD22B054DD00A956CA /* AppDelegate.swift */; };
@@ -25,6 +24,7 @@
 		E3BDEB6F22B05EF500B36AB5 /* SimpleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */; };
 		E3BDEB7322B0600500B36AB5 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
 		E3E28AD422B1A14600E839D4 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
+		E3E28AD622B1A3E900E839D4 /* NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28AD522B1A3E900E839D4 /* NotificationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		E33DF6B622B15B21009AA01C /* AsynchronousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsynchronousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E33DF6B822B15B21009AA01C /* AsynchronousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousTests.swift; sourceTree = "<group>"; };
 		E33DF6BA22B15B21009AA01C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33DF6C022B15BE8009AA01C /* PrimeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeCalculator.swift; sourceTree = "<group>"; };
 		E33DF6C222B15D2E009AA01C /* PrimeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeCalculatorTests.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		E3BDEB6A22B05E7500B36AB5 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewControllerTests.swift; sourceTree = "<group>"; };
 		E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleStoryboard.storyboard; sourceTree = "<group>"; };
+		E3E28AD522B1A3E900E839D4 /* NotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +99,9 @@
 		E33DF6B722B15B21009AA01C /* AsynchronousTests */ = {
 			isa = PBXGroup;
 			children = (
-				E33DF6B822B15B21009AA01C /* AsynchronousTests.swift */,
 				E33DF6BA22B15B21009AA01C /* Info.plist */,
 				E33DF6C222B15D2E009AA01C /* PrimeCalculatorTests.swift */,
+				E3E28AD522B1A3E900E839D4 /* NotificationTests.swift */,
 			);
 			path = AsynchronousTests;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33DF6B922B15B21009AA01C /* AsynchronousTests.swift in Sources */,
+				E3E28AD622B1A3E900E839D4 /* NotificationTests.swift in Sources */,
 				E33DF6C322B15D2E009AA01C /* PrimeCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
