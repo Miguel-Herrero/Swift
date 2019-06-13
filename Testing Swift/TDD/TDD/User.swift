@@ -9,11 +9,11 @@
 import Foundation
 
 struct User {
-
-    var products = [String]()
+    // Changed from [String] to Set<String> for better performance
+    var products = Set<String>()
 
     mutating func buy(_ product: String) {
-        products.append(product)
+        products.insert(product)
     }
 
     func owns(_ product: String) -> Bool {
