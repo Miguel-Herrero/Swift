@@ -75,4 +75,27 @@ class TDD_ProjectTests: XCTestCase {
             XCTAssertEqual(cell.accessoryType, .disclosureIndicator)
         }
     }
+
+    func testViewControllerUsesLargeTitles() {
+        // Given
+        let sut = ViewController()
+        _ = UINavigationController(rootViewController: sut)
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        XCTAssertTrue(sut.navigationController?.navigationBar.prefersLargeTitles ?? false)
+    }
+
+    func testNavigationBarHasTitle() {
+        // Given
+        let sut = ViewController()
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        XCTAssertEqual(sut.title, "TDD Project")
+    }
 }
