@@ -31,4 +31,16 @@ class TDD_ProjectTests: XCTestCase {
         // Then
         XCTAssertNotNil(sut.tableView)
     }
+
+    func testTableViewHasCorrectRowCount() {
+        // Given
+        let sut = ViewController()
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        let rowCount = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rowCount, sut.pictures.count)
+    }
 }
