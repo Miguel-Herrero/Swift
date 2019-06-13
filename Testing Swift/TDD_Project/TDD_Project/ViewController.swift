@@ -34,7 +34,7 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = pictures[indexPath.row]
 
         return cell

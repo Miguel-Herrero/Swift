@@ -59,4 +59,20 @@ class TDD_ProjectTests: XCTestCase {
             XCTAssertEqual(cell.textLabel?.text, picture)
         }
     }
+
+    func testCellsHaveDisclosureIndicators() {
+        // Given
+        let sut = ViewController()
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        for index in sut.pictures.indices {
+            let indexPath = IndexPath(item: index, section: 0)
+            let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
+
+            XCTAssertEqual(cell.accessoryType, .disclosureIndicator)
+        }
+    }
 }
