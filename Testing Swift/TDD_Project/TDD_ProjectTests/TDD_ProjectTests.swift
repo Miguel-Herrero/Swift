@@ -10,5 +10,14 @@ import XCTest
 @testable import TDD_Project
 
 class TDD_ProjectTests: XCTestCase {
+    func testLoadingImages() {
+        // Given
+        let sut = ViewController()
 
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        XCTAssertEqual(sut.pictures.count, 10, "There should be ten pictures.")
+    }
 }
