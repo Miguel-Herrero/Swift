@@ -25,6 +25,8 @@
 		E3BDEB7322B0600500B36AB5 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
 		E3E28AD422B1A14600E839D4 /* SimpleStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */; };
 		E3E28AD622B1A3E900E839D4 /* NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28AD522B1A3E900E839D4 /* NotificationTests.swift */; };
+		E3E28ADE22B1A9E900E839D4 /* CoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28ADD22B1A9E900E839D4 /* CoverageTests.swift */; };
+		E3E28AE622B1ABE100E839D4 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E28AE522B1ABE100E839D4 /* House.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,13 @@
 			remoteInfo = "Unit Testing";
 		};
 		E36454E122B054E000A956CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36454C222B054DD00A956CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36454C922B054DD00A956CA;
+			remoteInfo = "Unit Testing";
+		};
+		E3E28AE022B1A9E900E839D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E36454C222B054DD00A956CA /* Project object */;
 			proxyType = 1;
@@ -69,6 +78,10 @@
 		E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewControllerTests.swift; sourceTree = "<group>"; };
 		E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleStoryboard.storyboard; sourceTree = "<group>"; };
 		E3E28AD522B1A3E900E839D4 /* NotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTests.swift; sourceTree = "<group>"; };
+		E3E28ADB22B1A9E900E839D4 /* CoverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E28ADD22B1A9E900E839D4 /* CoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageTests.swift; sourceTree = "<group>"; };
+		E3E28ADF22B1A9E900E839D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E28AE522B1ABE100E839D4 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +100,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E36454DD22B054E000A956CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E28AD822B1A9E900E839D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +133,7 @@
 				E36454CC22B054DD00A956CA /* Unit Testing */,
 				E36454E322B054E000A956CA /* Unit TestingTests */,
 				E33DF6B722B15B21009AA01C /* AsynchronousTests */,
+				E3E28ADC22B1A9E900E839D4 /* CoverageTests */,
 				E36454CB22B054DD00A956CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +144,7 @@
 				E36454CA22B054DD00A956CA /* Unit Testing.app */,
 				E36454E022B054E000A956CA /* Unit TestingTests.xctest */,
 				E33DF6B622B15B21009AA01C /* AsynchronousTests.xctest */,
+				E3E28ADB22B1A9E900E839D4 /* CoverageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +163,7 @@
 				E3BDEB6A22B05E7500B36AB5 /* SimpleViewController.swift */,
 				E3BDEB7222B0600500B36AB5 /* SimpleStoryboard.storyboard */,
 				E33DF6C022B15BE8009AA01C /* PrimeCalculator.swift */,
+				E3E28AE522B1ABE100E839D4 /* House.swift */,
 			);
 			path = "Unit Testing";
 			sourceTree = "<group>";
@@ -164,6 +187,15 @@
 				E3BDEB6E22B05EF500B36AB5 /* SimpleViewControllerTests.swift */,
 			);
 			path = "Unit TestingTests";
+			sourceTree = "<group>";
+		};
+		E3E28ADC22B1A9E900E839D4 /* CoverageTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3E28ADD22B1A9E900E839D4 /* CoverageTests.swift */,
+				E3E28ADF22B1A9E900E839D4 /* Info.plist */,
+			);
+			path = CoverageTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +254,24 @@
 			productReference = E36454E022B054E000A956CA /* Unit TestingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E3E28ADA22B1A9E900E839D4 /* CoverageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E28AE222B1A9E900E839D4 /* Build configuration list for PBXNativeTarget "CoverageTests" */;
+			buildPhases = (
+				E3E28AD722B1A9E900E839D4 /* Sources */,
+				E3E28AD822B1A9E900E839D4 /* Frameworks */,
+				E3E28AD922B1A9E900E839D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3E28AE122B1A9E900E839D4 /* PBXTargetDependency */,
+			);
+			name = CoverageTests;
+			productName = CoverageTests;
+			productReference = E3E28ADB22B1A9E900E839D4 /* CoverageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,6 +293,10 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = E36454C922B054DD00A956CA;
 					};
+					E3E28ADA22B1A9E900E839D4 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = E36454C922B054DD00A956CA;
+					};
 				};
 			};
 			buildConfigurationList = E36454C522B054DD00A956CA /* Build configuration list for PBXProject "Unit Testing" */;
@@ -261,6 +315,7 @@
 				E36454C922B054DD00A956CA /* Unit Testing */,
 				E36454DF22B054E000A956CA /* Unit TestingTests */,
 				E33DF6B522B15B21009AA01C /* AsynchronousTests */,
+				E3E28ADA22B1A9E900E839D4 /* CoverageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,6 +347,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3E28AD922B1A9E900E839D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -308,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E28AE622B1ABE100E839D4 /* House.swift in Sources */,
 				E3BDEB6B22B05E7500B36AB5 /* SimpleViewController.swift in Sources */,
 				E36454CE22B054DD00A956CA /* AppDelegate.swift in Sources */,
 				E36454D022B054DD00A956CA /* SceneDelegate.swift in Sources */,
@@ -329,6 +392,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3E28AD722B1A9E900E839D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E28ADE22B1A9E900E839D4 /* CoverageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -341,6 +412,11 @@
 			isa = PBXTargetDependency;
 			target = E36454C922B054DD00A956CA /* Unit Testing */;
 			targetProxy = E36454E122B054E000A956CA /* PBXContainerItemProxy */;
+		};
+		E3E28AE122B1A9E900E839D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36454C922B054DD00A956CA /* Unit Testing */;
+			targetProxy = E3E28AE022B1A9E900E839D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -519,6 +595,7 @@
 				DEVELOPMENT_TEAM = FWMFW6L688;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Unit Testing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,6 +616,7 @@
 				DEVELOPMENT_TEAM = FWMFW6L688;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Unit Testing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,6 +670,46 @@
 			};
 			name = Release;
 		};
+		E3E28AE322B1A9E900E839D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FWMFW6L688;
+				INFOPLIST_FILE = CoverageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = es.miguelherrero.CoverageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unit Testing.app/Unit Testing";
+			};
+			name = Debug;
+		};
+		E3E28AE422B1A9E900E839D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FWMFW6L688;
+				INFOPLIST_FILE = CoverageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = es.miguelherrero.CoverageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unit Testing.app/Unit Testing";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -627,6 +745,15 @@
 			buildConfigurations = (
 				E36454ED22B054E000A956CA /* Debug */,
 				E36454EE22B054E000A956CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3E28AE222B1A9E900E839D4 /* Build configuration list for PBXNativeTarget "CoverageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E28AE322B1A9E900E839D4 /* Debug */,
+				E3E28AE422B1A9E900E839D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
