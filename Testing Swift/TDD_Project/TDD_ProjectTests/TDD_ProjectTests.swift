@@ -20,4 +20,15 @@ class TDD_ProjectTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.pictures.count, 10, "There should be ten pictures.")
     }
+
+    func testTableExists() {
+        // Given
+        let sut = ViewController()
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        XCTAssertNotNil(sut.tableView)
+    }
 }
