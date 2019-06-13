@@ -24,6 +24,8 @@
 		E3DD0E4822B2FC0A00C10018 /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3DD0E3E22B2FC0A00C10018 /* nssl0043.jpg */; };
 		E3DD0E4922B2FC0A00C10018 /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3DD0E3F22B2FC0A00C10018 /* nssl0033.jpg */; };
 		E3DD0E4A22B2FC0A00C10018 /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3DD0E4022B2FC0A00C10018 /* nssl0034.jpg */; };
+		E3DD0E4C22B3014A00C10018 /* DetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD0E4B22B3014A00C10018 /* DetailTests.swift */; };
+		E3DD0E4E22B3017B00C10018 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		E3DD0E3E22B2FC0A00C10018 /* nssl0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0043.jpg; sourceTree = "<group>"; };
 		E3DD0E3F22B2FC0A00C10018 /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		E3DD0E4022B2FC0A00C10018 /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
+		E3DD0E4B22B3014A00C10018 /* DetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTests.swift; sourceTree = "<group>"; };
+		E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				E3DD0E1F22B2F89600C10018 /* LaunchScreen.storyboard */,
 				E3DD0E2222B2F89600C10018 /* Info.plist */,
 				E3DD0E3622B2FC0A00C10018 /* Content */,
+				E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */,
 			);
 			path = TDD_Project;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				E3DD0E2B22B2F89600C10018 /* TDD_ProjectTests.swift */,
 				E3DD0E2D22B2F89600C10018 /* Info.plist */,
+				E3DD0E4B22B3014A00C10018 /* DetailTests.swift */,
 			);
 			path = TDD_ProjectTests;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				E3DD0E1922B2F89400C10018 /* ViewController.swift in Sources */,
 				E3DD0E1522B2F89400C10018 /* AppDelegate.swift in Sources */,
 				E3DD0E1722B2F89400C10018 /* SceneDelegate.swift in Sources */,
+				E3DD0E4E22B3017B00C10018 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DD0E4C22B3014A00C10018 /* DetailTests.swift in Sources */,
 				E3DD0E2C22B2F89600C10018 /* TDD_ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
