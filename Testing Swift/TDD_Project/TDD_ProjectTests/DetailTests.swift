@@ -54,4 +54,19 @@ class DetailTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.imageView.contentMode, .scaleAspectFit)
     }
+
+    func testDetailLoadsImage() {
+        // Given
+        let filenameToTest = "nssl10049.jpg"
+        let imageToLoad = UIImage(named: filenameToTest, in: Bundle.main, compatibleWith: nil)
+
+        let sut = DetailViewController()
+        sut.selectedImage = filenameToTest
+
+        // When
+        sut.loadViewIfNeeded()
+
+        // Then
+        XCTAssertEqual(sut.imageView.image, imageToLoad)
+    }
 }

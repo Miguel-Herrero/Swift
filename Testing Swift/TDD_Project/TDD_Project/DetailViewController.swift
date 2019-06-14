@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     let imageView = UIImageView()
+    var selectedImage: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
