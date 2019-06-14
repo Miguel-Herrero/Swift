@@ -57,7 +57,7 @@ class DetailTests: XCTestCase {
 
     func testDetailLoadsImage() {
         // Given
-        let filenameToTest = "nssl10049.jpg"
+        let filenameToTest = "nssl0049.jpg"
         let imageToLoad = UIImage(named: filenameToTest, in: Bundle.main, compatibleWith: nil)
 
         let sut = DetailViewController()
