@@ -102,51 +102,35 @@ class TDD_ProjectTests: XCTestCase {
     func testSelectingImageShowsDetail() {
         // Given
         let sut = ViewController()
-        let navigationController = UINavigationController(rootViewController: sut)
+        var selectedImage: String?
         let testIndexPath = IndexPath(row: 0, section: 0)
 
         // When
-        sut.tableView(sut.tableView, didSelectRowAt: testIndexPath)
-
-        // Create an expectation…
-        let expectation = XCTestExpectation(description: "Selecting a table view cell.")
-
-        // …then fulfill it asynchronously
-        DispatchQueue.main.async {
-            expectation.fulfill()
+        sut.pictureSelectAction = {
+            selectedImage = $0
         }
 
-        // Then
-        wait(for: [expectation], timeout: 1)
-        XCTAssertTrue(navigationController.topViewController is DetailViewController)
+        sut.tableView(sut.tableView, didSelectRowAt: testIndexPath)
+
+        XCTAssertEqual(selectedImage, "nssl0049.jpg")
     }
 
     func testSelectingImageShowsDetailImage() {
         // Given
         let sut = ViewController()
-        let navigationController = UINavigationController(rootViewController: sut)
         let testIndexPath = IndexPath(row: 0, section: 0)
         let filenameToTest = "nssl0049.jpg"
         let imageToLoad = UIImage(named: filenameToTest, in: Bundle.main, compatibleWith: nil)
 
         // When
+        sut.pictureSelectAction = {
+            let detail = DetailViewController()
+            detail.selectedImage = $0
+            detail.loadViewIfNeeded()
+
+            XCTAssertEqual(detail.imageView.image, imageToLoad)
+        }
+
         sut.tableView(sut.tableView, didSelectRowAt: testIndexPath)
-
-        let expectation = XCTestExpectation(description: "Selecting a table view cell.")
-
-        DispatchQueue.main.async {
-            expectation.fulfill()
-        }
-
-        // Then
-        wait(for: [expectation], timeout: 1)
-        guard let detail = navigationController.topViewController as? DetailViewController else {
-            XCTFail("Didn't push to a detail view controller.")
-            return
-        }
-
-        detail.loadViewIfNeeded()
-
-        XCTAssertEqual(detail.imageView.image, imageToLoad)
     }
 }

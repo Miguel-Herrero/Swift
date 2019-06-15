@@ -26,6 +26,7 @@
 		E3DD0E4A22B2FC0A00C10018 /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3DD0E4022B2FC0A00C10018 /* nssl0034.jpg */; };
 		E3DD0E4C22B3014A00C10018 /* DetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD0E4B22B3014A00C10018 /* DetailTests.swift */; };
 		E3DD0E4E22B3017B00C10018 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */; };
+		E3F7C65022B57D9100685482 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7C64F22B57D9100685482 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E3DD0E4022B2FC0A00C10018 /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
 		E3DD0E4B22B3014A00C10018 /* DetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTests.swift; sourceTree = "<group>"; };
 		E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E3F7C64F22B57D9100685482 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E3DD0E2222B2F89600C10018 /* Info.plist */,
 				E3DD0E3622B2FC0A00C10018 /* Content */,
 				E3DD0E4D22B3017B00C10018 /* DetailViewController.swift */,
+				E3F7C64F22B57D9100685482 /* MainCoordinator.swift */,
 			);
 			path = TDD_Project;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				E3DD0E1922B2F89400C10018 /* ViewController.swift in Sources */,
 				E3DD0E1522B2F89400C10018 /* AppDelegate.swift in Sources */,
 				E3DD0E1722B2F89400C10018 /* SceneDelegate.swift in Sources */,
+				E3F7C65022B57D9100685482 /* MainCoordinator.swift in Sources */,
 				E3DD0E4E22B3017B00C10018 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
