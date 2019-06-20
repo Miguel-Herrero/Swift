@@ -30,8 +30,8 @@ struct CategoryRow : View {
                     }
                 }
             }
+            .frame(height: 185)
         }
-        .frame(height: 185)
     }
 }
 
@@ -47,7 +47,7 @@ struct CategoryItem: View {
                 .color(.primary)
                 .font(.caption)
         }
-        .padding(.leading, 5)
+        .padding(.leading, 15)
     }
 }
 

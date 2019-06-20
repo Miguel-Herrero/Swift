@@ -1,5 +1,5 @@
 //
-//  CategoryHome.swift
+//  Home.swift
 //  Landmarks
 //
 //  Created by Miguel Herrero Baena on 20/06/2019.

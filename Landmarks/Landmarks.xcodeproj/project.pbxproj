@@ -30,7 +30,7 @@
 		E31E3E6022B9A65C00810EC5 /* chilkoottrail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E31E3E5322B9A65C00810EC5 /* chilkoottrail.jpg */; };
 		E31E3E6122B9A65C00810EC5 /* rainbowlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E31E3E5422B9A65C00810EC5 /* rainbowlake.jpg */; };
 		E31E3E6522B9A6C800810EC5 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E3E6422B9A6C800810EC5 /* LandmarkList.swift */; };
-		E324872722BB965900260894 /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E324872622BB965900260894 /* CategoryHome.swift */; };
+		E324872722BB965900260894 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E324872622BB965900260894 /* Home.swift */; };
 		E324872922BB97B200260894 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E324872822BB97B200260894 /* CategoryRow.swift */; };
 		E324872B22BB99BB00260894 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = E324872A22BB99BB00260894 /* landmarkData.json */; };
 		E324872D22BB9A2100260894 /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E324872C22BB9A2100260894 /* charleyrivers.jpg */; };
@@ -74,7 +74,7 @@
 		E31E3E5322B9A65C00810EC5 /* chilkoottrail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chilkoottrail.jpg; sourceTree = "<group>"; };
 		E31E3E5422B9A65C00810EC5 /* rainbowlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbowlake.jpg; sourceTree = "<group>"; };
 		E31E3E6422B9A6C800810EC5 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
-		E324872622BB965900260894 /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
+		E324872622BB965900260894 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E324872822BB97B200260894 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		E324872A22BB99BB00260894 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = landmarkData.json; path = ../../../../../../../Downloads/ComposingComplexInterfaces/Complete/Landmarks/Landmarks/Resources/landmarkData.json; sourceTree = "<group>"; };
 		E324872C22BB9A2100260894 /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			children = (
 				E315F72F22B947B3002FE277 /* AppDelegate.swift */,
 				E315F73522B947B5002FE277 /* Assets.xcassets */,
-				E324872622BB965900260894 /* CategoryHome.swift */,
+				E324872622BB965900260894 /* Home.swift */,
 				E373BBF822BA6E5E002C96B8 /* HexagonParameters.swift */,
 				E36929DA22BB781B00FCD491 /* HikeDetail.swift */,
 				E36929D922BB781B00FCD491 /* HikeView.swift */,
@@ -285,7 +285,7 @@
 			files = (
 				E324872922BB97B200260894 /* CategoryRow.swift in Sources */,
 				E36929E222BB78F900FCD491 /* GraphCapsule.swift in Sources */,
-				E324872722BB965900260894 /* CategoryHome.swift in Sources */,
+				E324872722BB965900260894 /* Home.swift in Sources */,
 				E373BBF922BA6E5E002C96B8 /* HexagonParameters.swift in Sources */,
 				E315F73022B947B3002FE277 /* AppDelegate.swift in Sources */,
 				E315F74422B948CD002FE277 /* CircleImage.swift in Sources */,
