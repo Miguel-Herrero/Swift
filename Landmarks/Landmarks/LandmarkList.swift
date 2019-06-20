@@ -39,6 +39,7 @@ struct LandmarkList_Previews : PreviewProvider {
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
         }
+        .environmentObject(UserData())
     }
 }
 #endif
