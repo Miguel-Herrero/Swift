@@ -55,8 +55,6 @@ struct LandmarkDetail : View {
                 }
                 .padding()
 
-                Badge()
-
                 Spacer()
         }
         .navigationBarTitle(Text(landmark.name), displayMode: .inline)
