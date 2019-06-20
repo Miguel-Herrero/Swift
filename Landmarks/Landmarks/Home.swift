@@ -22,11 +22,9 @@ struct CategoryHome : View {
 
     var body: some View {
         NavigationView {
-            FeaturedLandmarks(landmarks: featured)
-                .scaledToFill()
+
+            PageView(features.map { FeatureCard(landmark: $0) })
                 .frame(height: 200)
-                .clipped()
-                .listRowInsets(EdgeInsets())
 
             List {
                 ForEach(categories.keys.sorted().identified(by: \.self)) { key in
