@@ -1,5 +1,5 @@
 # Swift
-Swift documentation, tips and demo projects.
+Portfolio with the apps created with Swift. Documentation, tips and demo projects.
 
 ## Beginner
 
